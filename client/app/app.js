@@ -6,4 +6,16 @@ var adaApp = angular.module('adaApp', ['ui.router'])
     templateUrl: 'app/auth/signin.html',
     controller: 'authCtrl.js'
   })
+
+  .state('signup', {
+    url: '/signup',
+    templateUrl: 'app/auth/signup.html',
+    controller: 'authCtrl.js'
+  });
+
+  .state('listings', {
+    url: '/listings',
+    templateUrl: 'app/auth/'
+  });
+
 });
