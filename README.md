@@ -1,4 +1,4 @@
-# APP NAME
+# Ada
 
 > *SLOGAN*
 
@@ -13,11 +13,11 @@
 *Note: click names for Github profiles*
 
 ## Usage
-> [APP NAME] is a mobile and web application that is used to report accessibility issues around Los Angeles
+> Ada is a mobile and web application that is used to report accessibility issues around Los Angeles
 
 #### MongoDB Design
-<!-- IMAGE -->
-<!-- ![TownHall Schema](/client/assets/TownHall SQL Schema.png) -->
+
+![Ada Schema](/client/schemaDesign/mongoSchema.png)
 
 
 ## Requirements
