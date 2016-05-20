@@ -10,12 +10,12 @@ exports.signin = function(req, res) {
 };
 
 exports.signup = function(req, res) {
-  var user = new User{
+  var user = new User ({
     id: req.body.id,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     password: req.body.password
-  };
+  });
 
   user.save(function(err){
     if(err) {

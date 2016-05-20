@@ -5,5 +5,5 @@ module.exports = function(app) {
   app.post('/signin', authController.signin);
 
   // sign up
-  app.post('/signup', authConroller.signup);
+  app.post('/signup', authController.signup);
 };
