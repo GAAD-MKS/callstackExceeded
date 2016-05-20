@@ -7,13 +7,13 @@
 2) Clone your fork to your local machine
 
 ~~~~
-git clone https://github.com/**yourAcctName**/GAAD-MKS.git
+git clone https://github.com/**yourAcctName**/Ada.git
 ~~~~
 
 3) Add an upstream remote
 
 ~~~~
-git remote add upstream https://github.com/GAAD-MKS/callstackExceeded
+git remote add upstream https://github.com/GAAD-MKS/Ada.git
 ~~~~
 
 4) Install npm dependencies
