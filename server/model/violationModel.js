@@ -10,3 +10,5 @@ var violationSchema = new mongoose.Schema({
   status: { type: String, default: 'pending' },
   timestamps: true
 })
+
+module.exports = mongoose.model('Violation', violationSchema);
