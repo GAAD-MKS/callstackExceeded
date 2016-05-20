@@ -1,18 +1,15 @@
 var app = require('../server.js');
 
 module.exports = function(app, express) {
-// signin route
-  app.post('/api/auth/signin', function() {
+  var authRouter = express.Router();
+  var listingRouter = express.Router();
 
-  });
+  // auth route
+  app.use('/api/auth', authRouter);
 
-// signup route
-  app.post('/api/auth/signup', function() {
+  // listings route
+  app.get('/api/listings', listingRouter);
 
-  });
-
-  // get violation listings route
-app.get('/api/listings/fetchListings', function() {
-
-});
+  require('./authRoute.js')(authRouter);
+  require('./listingRoute.js')(listingRouter);
 }
