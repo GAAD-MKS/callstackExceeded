@@ -11,11 +11,11 @@ var adaApp = angular.module('adaApp', ['ui.router'])
     url: '/signup',
     templateUrl: 'app/auth/signup.html',
     controller: 'authCtrl.js'
-  });
+  })
 
   .state('listings', {
     url: '/listings',
-    templateUrl: 'app/auth/'
+    templateUrl: 'app/listings/listings.html'
   });
 $urlRouterProvider.otherwise('/signin');
 });
