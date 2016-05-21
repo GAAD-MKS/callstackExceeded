@@ -2,14 +2,11 @@ var Violation = require('../model/violationModel.js');
 
 exports.addListing = function(req, res) {
   var violation = new Violation ({
-    id: req.body.id,
     createdBy: req.body.createdBy,
     locationName: req.body.locationName,
     violation: req.body.violation,
     comment: req.body.comment,
-    geolocation: req.body.geolocation,
-    status: { type: String, default: 'pending' },
-    timestamp: true
+    geolocation: req.body.geolocation
   });
 
   violation.save(function(err) {
