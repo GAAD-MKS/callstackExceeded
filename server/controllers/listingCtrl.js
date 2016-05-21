@@ -22,4 +22,17 @@ exports.fetchListings = function(req, res) {
     }
     res.send(violations);
   });
-};
+}
+
+
+exports.closeListing = function(req, res) {
+  Violation.where({ _id: req.body._id }).update({ status: "closed" }, function(err) {
+    if (err) {
+      console.log(err);
+    }
+    res.end();
+  });
+}
+
+
+
