@@ -2,7 +2,6 @@ var Violation = require('../model/violationModel.js');
 
 exports.addListing = function(req, res) {
   var violation = new Violation ({
-    createdBy: req.body.createdBy,
     locationName: req.body.locationName,
     violation: req.body.violation,
     comment: req.body.comment,
@@ -13,7 +12,7 @@ exports.addListing = function(req, res) {
     if(err) {
       throw err;
     }
-    res.sendStatus(400);
+    res.sendStatus(200);
   });
 };
 

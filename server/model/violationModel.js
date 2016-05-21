@@ -1,11 +1,13 @@
 var mongoose = require('mongoose');
 
 var violationSchema = new mongoose.Schema({
-  createdBy: Number,
   locationName: String,
   violation: String,
   comment: String,
-  geolocation: String,
+  geolocation: {
+    type: [Number],
+    index: '2dsphere'
+  },
   status: { type: String, default: 'pending' },
 }, {timestamps: true});
 

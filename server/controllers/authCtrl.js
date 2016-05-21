@@ -12,9 +12,9 @@ exports.signin = function(req, res) {
 exports.signup = function(req, res) {
   console.log('reqbody: ' + JSON.stringify(req.body));
   var user = new User ({
-    id: req.body.id,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
+    username: req.body.username,
     email: req.body.email,
     password: req.body.password
   });
@@ -23,6 +23,6 @@ exports.signup = function(req, res) {
     if(err) {
       throw err;
     }
-    res.sendStatus(400);
+    res.sendStatus(200);
   });
 };
