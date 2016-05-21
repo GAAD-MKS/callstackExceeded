@@ -8,13 +8,9 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
 
-    <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
+    <script src="js/ng-cordova.min.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -23,12 +19,10 @@
   </head>
   <body ng-app="starter">
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane>
+    <ion-content ng-controller="imageController">
+      <img ng-show="data.imgURI !== undefined" ng-src="{{data.imgURI}}">
+      <!-- <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300"> -->
+      <button ng-if="data.imgURI === undefined" class="button" ng-click="takePicture()">Take Picture</button>
+    </ion-content>
   </body>
 </html>
