@@ -17,5 +17,5 @@ var adaApp = angular.module('adaApp', ['ui.router'])
     url: '/listings',
     templateUrl: 'app/auth/'
   });
-
+$urlRouterProvider.otherwise('/signin');
 });

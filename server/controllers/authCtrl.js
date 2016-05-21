@@ -10,6 +10,7 @@ exports.signin = function(req, res) {
 };
 
 exports.signup = function(req, res) {
+  console.log('reqbody: ' + req.body.id);
   var user = new User ({
     id: req.body.id,
     firstName: req.body.firstName,
