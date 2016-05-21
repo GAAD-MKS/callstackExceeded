@@ -3,6 +3,7 @@ angular.module('adaApp')
 .factory('frontAuthFactory', function ($http, $location, $window) {
 
   var signin = function (user) {
+    console.log('++line 6 inside signup in frontAuthFactory',user);
     return $http({
       method: 'POST',
       url: '/signin',
@@ -14,6 +15,7 @@ angular.module('adaApp')
   };
 
   var signup = function (user) {
+    console.log('++line 18 inside signup in frontAuthFactory',user);
     return $http({
       method: 'POST',
       url: '/signup',
