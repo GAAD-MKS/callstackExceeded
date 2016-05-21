@@ -16,7 +16,7 @@ var adaApp = angular.module('adaApp', ['ui.router'])
   .state('listings', {
     url: '/listings',
     templateUrl: 'app/listings/listings.html',
-    controller: 'listingsCtrl'
+    controller: 'ListingsCtrl as listings'
   });
 
 $urlRouterProvider.otherwise('/signin');
