@@ -17,7 +17,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
 })
 
 .factory('imageFactor', function($http) {
-  
+
 })
 
 .controller('imageController', function($scope, $cordovaCamera, $cordovaFile, $cordovaGeolocation) {
@@ -38,7 +38,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
     };
 
     var posOptions = {
-      timeout: 1000,
+      timeout: 20000,
       enableHighAccuracy: false
     };
 
