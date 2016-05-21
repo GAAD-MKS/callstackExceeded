@@ -16,13 +16,30 @@ angular.module('starter', ['ionic', 'ngCordova'])
   });
 })
 
-.factory('imageFactor', function($http) {
-
+.factory('imageFactory', function($http) {
+  reportViolation = function(data) {
+    console.log('inside factory', data);
+    return $http({
+      method: 'POST',
+      url: 'http://localhost:3000/api/listings/addListing',
+      data: data
+    }).then(function(res) {
+      console.log(res);
+    })
+  }
+  return {
+    reportViolation: reportViolation
+  }
 })
 
-.controller('imageController', function($scope, $cordovaCamera, $cordovaFile, $cordovaGeolocation) {
+.controller('imageController', function($scope, $cordovaCamera, $cordovaFile, $cordovaGeolocation, imageFactory) {
 
   $scope.data = {};
+
+  $scope.reportViolation = function() {
+    console.log($scope.data);
+    imageFactory.reportViolation($scope.data);
+  }
 
   $scope.takePicture = function() {
     var options = {
@@ -44,9 +61,10 @@ angular.module('starter', ['ionic', 'ngCordova'])
 
     $cordovaGeolocation.getCurrentPosition(posOptions)
       .then(function(position) {
-        var lat = position.coords.latitude;
-        var lng = position.coords.longitude;
-        console.log(lat + ' ' + lng);
+        $scope.data.geolocation = {};
+        $scope.data.geolocation.lat = position.coords.latitude;
+        $scope.data.geolocation.lng = position.coords.longitude;
+        console.log($scope.data.geolocation.lat + ' ' + $scope.data.geolocation.lng);
       }, function(err) {
         console.log(err);
       });
