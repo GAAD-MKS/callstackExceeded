@@ -8,7 +8,7 @@ module.exports = function(app, express) {
   app.use('/api/auth', authRouter);
 
   // listings route
-  app.get('/api/listings', listingRouter);
+  app.use('/api/listings', listingRouter);
 
   require('./authRoute.js')(authRouter);
   require('./listingRoute.js')(listingRouter);
