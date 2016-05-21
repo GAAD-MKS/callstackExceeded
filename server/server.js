@@ -1,8 +1,16 @@
 var express = require('express');
 var port = process.env.PORT || 3000;
 var mongoose = require('mongoose');
-var dbHost ='mongodb://ada:makersquare32@ds025762.mlab.com:25762/ada';
 var app = express();
+
+if(!process.env.USERNAME) {
+  var config = require('./config.js');
+}
+
+var mongooseUsername = process.env.USERNAME || config.username;
+var mongoosePassword = process.env.PASSWORD || config.password;
+
+var dbHost ='mongodb://' + mongooseUsername + ':' +  mongoosePassword + '@ds025762.mlab.com:25762/ada';
 
 // routing to static files
 app.use(express.static(__dirname + '/../client/'));
