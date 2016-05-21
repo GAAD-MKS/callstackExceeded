@@ -18,11 +18,10 @@ exports.addListing = function(req, res) {
 };
 
 exports.fetchListings = function(req, res) {
-  Violation.find({})
-  .where('createdBy').equals(req.body.id).exec(function(err, violations) {
+  Violation.find({}, function(err, violations) {
     if(err) {
       throw err;
     }
-    res.send(violations)
+    res.send(violations);
   });
 };

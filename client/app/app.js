@@ -10,12 +10,13 @@ var adaApp = angular.module('adaApp', ['ui.router'])
   .state('signup', {
     url: '/signup',
     templateUrl: 'app/auth/signup.html',
-    // controller: 'frontAuthCtrl.js'
+    controller: 'authCtrl'
   })
 
   .state('listings', {
     url: '/listings',
-    templateUrl: 'app/auth/'
+    templateUrl: 'app/listings/listings.html',
+    controller: 'listingsCtrl'
   });
 
 $urlRouterProvider.otherwise('/signin');
