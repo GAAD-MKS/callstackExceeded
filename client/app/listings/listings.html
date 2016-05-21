@@ -3,16 +3,18 @@
     <th>Location</th>
     <th>Violation</th>
     <th>Comment</th>
-    <th>GeoLocation</th>
     <th>Created</th>
     <th>Updated</th>
     <th>Status</th>
   </thead>
   <tbody>
-    <tr>
-      <td>{{listings.name}}</td>
-      <td></td>
-      <td></td>
+    <tr ng-repeat="item in listings.violations">
+      <td>{{item.locationName}}</td>
+      <td>{{item.violation}}</td>
+      <td>{{item.comment}}</td>
+      <td>{{item.createdAt}}</td>
+      <td>{{item.updatedAt}}</td>
+      <td>{{item.status}}</td>
     </tr>
   </tbody>
 
