@@ -11,7 +11,19 @@ function listingsFactory($http) {
     })
   }
 
+  function closeListing(item) {
+    return $http({
+      method: 'PUT',
+      url: 'api/listings/closeListing',
+      data: item
+    }).then(function(res) {
+      console.log(res);
+      return res.data;
+    })
+  }
+
   return {
-    fetchListings: fetchListings
+    fetchListings: fetchListings,
+    closeListing: closeListing
   }
 }

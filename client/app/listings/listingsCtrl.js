@@ -15,5 +15,12 @@ function ListingsCtrl($scope, listingsFactory) {
     })
   }
 
+  vm.closeListing = function(item) {
+    console.log(item);
+    listingsFactory.closeListing(item).then(function(res) {
+      item.status = "closed"
+    })
+  }
+
   vm.populateListings();
 }
