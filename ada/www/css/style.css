@@ -1,1 +1,11 @@
-/* Empty. Add your own CSS if you like */
+.reportButton {
+  margin: auto;
+}
+
+.item {
+  border:none;
+}
+
+.input {
+  border: 1px solid gray;
+}
