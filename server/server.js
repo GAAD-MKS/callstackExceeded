@@ -1,7 +1,7 @@
 var express = require('express');
 var port = process.env.PORT || 3000;
 var mongoose = require('mongoose');
-var dbHost ='mongodb://heroku_f2h0fg97:je16b9j3jans4dvbaqpjc2frq9@ds011883.mlab.com:11883/heroku_f2h0fg97',["adaapp"];
+var dbHost ='mongodb://heroku_t8btmd26:n94e9q0kskimkj7m58dvjoferk@ds011863.mlab.com:11863/heroku_t8btmd26';
 var app = express();
 
 // routing to static files
