@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="col-md-9 col-md-offset-3">
+    <div class="row-fluid">
+      <div id='signup' class="form-signin col-md-6 col-sm-12 col-xs-12">
+        <form name="signupForm" ng-submit='signup()' ng-controller="frontAuthCtrl">
+          <h2 class="form-signin-heading">Please Sign Up</h2>
+          <label for="inputEmail" class="sr-only">Email</label>
+          <input type='text' id="inputEmail" class="form-control" placeholder="Email" ng-model='user.email' required autofocus="">
+          <label for="password" class="sr-only">Password</label>
+          <input type="password" id="password" class="form-control" placeholder="Password" ng-model='user.password' required>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+          <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

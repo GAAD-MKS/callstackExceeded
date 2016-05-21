@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var timestamps = require('mongoose-timestamp');
 
 var userSchema = new mongoose.Schema({
   firstName: String,
