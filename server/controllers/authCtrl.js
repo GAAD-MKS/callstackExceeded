@@ -10,11 +10,12 @@ exports.signin = function(req, res) {
 };
 
 exports.signup = function(req, res) {
-  console.log('reqbody: ' + req.body.id);
+  console.log('reqbody: ' + JSON.stringify(req.body));
   var user = new User ({
     id: req.body.id,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
+    email: req.body.email,
     password: req.body.password
   });
 
