@@ -4,9 +4,7 @@ exports.addListing = function(req, res) {
   var violation = new Violation ({
     locationName: req.body.locationName,
     violation: req.body.violation,
-    comment: req.body.comment,
-    geolocation: req.body.geolocation,
-    status: { type: String, default: 'pending' }
+    comment: req.body.comment
   });
 
   violation.save(function(err) {

@@ -8,7 +8,7 @@ var violationSchema = new mongoose.Schema({
     type: [Number],
     index: '2dsphere'
   },
-  status: { type: String, default: 'pending' },
+  status: { type: String, default: 'pending' }
 }, {timestamps: true});
 
 module.exports = mongoose.model('Violation', violationSchema);
