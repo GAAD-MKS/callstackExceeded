@@ -4,6 +4,7 @@ var violationSchema = new mongoose.Schema({
   locationName: String,
   violation: String,
   comment: String,
+  url: String,
   geolocation: {
     type: [Number],
     index: '2dsphere'
