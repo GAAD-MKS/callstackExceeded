@@ -1,4 +1,4 @@
-<table>
+<table class="table table-hover">
   <thead>
     <th>Location</th>
     <th>Violation</th>
@@ -6,6 +6,7 @@
     <th>Created</th>
     <th>Updated</th>
     <th>Status</th>
+    <th>Action</th>
   </thead>
   <tbody>
     <tr ng-repeat="item in listings.violations">
@@ -16,11 +17,13 @@
       <td>{{item.updatedAt}}</td>
       <td>{{item.status}}</td>
       <td>
-        <button ng-click=listings.closeListing(item) ng-show='item.status === "pending"'>Close</button>
-        <button ng-click=listings.openListing(item) ng-show='item.status === "closed"'>Re-open</button>
+        <button ng-click=listings.closeListing(item)
+                ng-show='item.status === "pending"'
+                class="btn btn-success">Close</button>
+        <button ng-click=listings.openListing(item)
+                ng-show='item.status === "closed"'
+                class="btn btn-warning">Re-open</button>
       </td>
     </tr>
   </tbody>
-
-
 </table>
