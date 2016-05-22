@@ -1,0 +1,14 @@
+input {
+  margin-bottom: 20px;
+}
+
+form > h2 {
+  text-align:center;
+  margin: 50px;
+}
+.container-fluid {
+  width:100%;
+}
+#signin {
+  margin: auto;
+}
