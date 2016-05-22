@@ -4,7 +4,8 @@ exports.addListing = function(req, res) {
   var violation = new Violation ({
     locationName: req.body.locationName,
     violation: req.body.violation,
-    comment: req.body.comment
+    comment: req.body.comment,
+    url: req.body.url
   });
 
   function decodeBase64Image(dataString) {
