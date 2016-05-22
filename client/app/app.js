@@ -26,4 +26,32 @@ var adaApp = angular.module('adaApp', ['ui.router'])
   });
 
 $urlRouterProvider.otherwise('/signin');
+$httpProvider.interceptors.push('AttachTokens');
+})
+
+.factory('AttachTokens', function ($window) {
+  var attach = {
+    request: function (object) {
+      var jwt = $window.localStorage.getItem('com.adaapp');
+      if (jwt) {
+        object.headers['x-access-token'] = jwt;
+      }
+      return object;
+    }
+  };
+  return attach;
+})
+
+.run(function ($rootScope, $state, $location, frontAuthFactory) {
+  $rootScope.url = "http://localhost:3000";
+  $rootScope.$on('$stateChangeStart', function (e, toState) {
+    if (toState.authenticate && !frontAuthFactory.isAuth()) {
+      e.preventDefault();
+      $state.go('signin');
+    }
+    if(!toState.authenticate && frontAuthFactory.isAuth()) {
+      e.preventDefault();
+      $state.go('listings');
+    }
+  });
 });

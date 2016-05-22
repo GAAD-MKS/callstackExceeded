@@ -10,6 +10,7 @@ angular.module('adaApp')
       data: user
     })
       .then(function (resp) {
+        console.log('++line 13 inside signin on return', resp.data);
         return resp.data;
       });
   };
