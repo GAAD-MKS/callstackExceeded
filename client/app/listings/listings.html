@@ -11,7 +11,9 @@
   </thead>
   <tbody>
     <tr ng-repeat="item in listings.violations">
-
+      <td><img src={{item.url}}
+                height="88"
+                width="88"/></td>
       <td>{{item.locationName}}</td>
       <td>{{item.violation}}</td>
       <td>{{item.comment}}</td>

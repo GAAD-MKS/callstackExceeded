@@ -56,7 +56,7 @@ exports.closeListing = function(req, res) {
 }
 
 exports.openListing = function(req, res) {
-  Violation.where({ _id: req.body._id }).update({ status: "pending" }, function(err) {
+  Violation.where({ _id: req.body._id }).update({ status: "open" }, function(err) {
     if (err) {
       console.log(err);
     }
