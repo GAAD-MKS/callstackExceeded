@@ -28,7 +28,8 @@ angular.module('adaApp')
       if(response === false) {
         swal('Username exists', 'Please choose another username.','error');
       } else {
-        $state.go('signin');
+        $window.localStorage.setItem('com.adaApp', response);
+        $state.go('listings');
       }
     });
   };
