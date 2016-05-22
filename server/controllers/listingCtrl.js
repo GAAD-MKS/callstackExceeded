@@ -7,6 +7,27 @@ exports.addListing = function(req, res) {
     comment: req.body.comment
   });
 
+  function decodeBase64Image(dataString) {
+    var matches = dataString.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/),
+      response = {};
+
+    if (matches.length !== 3) {
+      return new Error('Invalid input string');
+    }
+
+    response.type = matches[1];
+    response.data = new Buffer(matches[2], 'base64');
+
+    return response;
+  }
+
+  var imageBuffer = decodeBase64Image(image);
+  console.log(imageBuffer);
+
+  require("fs").writeFile("../client/test.png", new Buffer(image,"base64"), function(err) {
+  console.log(err);
+});
+
   violation.save(function(err) {
     if(err) {
       throw err;
