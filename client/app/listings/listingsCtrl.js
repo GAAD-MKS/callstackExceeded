@@ -8,8 +8,9 @@ function ListingsCtrl($scope, listingsFactory) {
 
   vm.populateListings = function() {
     listingsFactory.fetchListings().then(function(res) {
-      console.log(res);
       res.forEach(function(item) {
+        item.createdAt = moment(item.createdAt).format('MMMM Do, YYYY');
+        item.updatedAt = moment(item.updatedAt).format('MMMM Do, YYYY');
         vm.violations.push(item);
       })
     })
