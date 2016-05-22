@@ -3,29 +3,39 @@ angular.module('adaApp')
 .controller('frontAuthCtrl', function($scope, $window, $location, $state, frontAuthFactory) {
   $scope.user = {};
 
+  // authenticates by checking if there is a token
+  $scope.isAuth = function(){
+    return Boolean($window.localStorage.getItem('com.adaApp'));
+  };
+
   $scope.signin = function() {
-    console.log('++line 7 inside signin in frontAuthCtrl');
+    console.log('++line 12 inside signin in frontAuthCtrl');
     frontAuthFactory.signin($scope.user)
     .then(function(response) {
-      if(response.isValid) {
-        $window.localStorage.setItem('com.adaApp', response.token);
-        $state.go('eventsHome');
+      if(response) {
+        $window.localStorage.setItem('com.adaApp', response);
+        $state.go('listings');
       } else {
-        $state.go('signup');
+        swal("Oops...", "Username or password is incorrect", "error");
       }
     });
   };
 
   $scope.signup = function() {
-    console.log('++line 20 inside signup in frontAuthCtrl');
+    console.log('++line 25 inside signup in frontAuthCtrl');
     frontAuthFactory.signup($scope.user)
     .then(function(response) {
-      if(response.isValid) {
-        $window.localStorage.setItem('com.adaApp', response.token);
-        $state.go('eventsHome');
+      if(response === false) {
+        swal('Username exists', 'Please choose another username.','error');
       } else {
         $state.go('signin');
       }
     });
+  };
+
+  // removes token when logout is clicked
+  $scope.signout = function(){
+    $window.localStorage.removeItem('com.adaApp');
+    $state.go('signin');
   };
 });
