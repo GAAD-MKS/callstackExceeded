@@ -15,7 +15,10 @@
       <td>{{item.createdAt}}</td>
       <td>{{item.updatedAt}}</td>
       <td>{{item.status}}</td>
-      <td><button ng-click=listings.closeListing(item) ng-show='item.status === "pending"'>Close</button></td>
+      <td>
+        <button ng-click=listings.closeListing(item) ng-show='item.status === "pending"'>Close</button>
+        <button ng-click=listings.openListing(item) ng-show='item.status === "closed"'>Re-open</button>
+      </td>
     </tr>
   </tbody>
 
