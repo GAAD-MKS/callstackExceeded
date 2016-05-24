@@ -34,6 +34,10 @@ angular.module('adaApp')
     });
   };
 
+  $scope.signupRedirect = function() {
+    $state.go("signup");
+  }
+
   // removes token when logout is clicked
   $scope.signout = function(){
     $window.localStorage.removeItem('com.adaApp');
