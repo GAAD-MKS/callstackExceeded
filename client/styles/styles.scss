@@ -1,34 +1,43 @@
+$authFontFam: Helvetica;
+$authFontWeight: bold;
+$authFontSize: 14px;
+$authPosition: center;
+$authPadding: 20px;
+
+
 html {
   overflow-y: scroll;
 }
 
 body {
-  background-color: rgba(33, 33, 22, 0.24);
+  background-color: rgba(#212116, 0.24);
 }
 
 div {
-  padding: 20px;
+  padding: $authPadding;
 }
 
-form input {
-  border: none;
-  background: transparent;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  width: 200px;
-}
-form button {
-  border: 0;
-  color: #fff;
+form {
+  input {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    width: 200px;
+  }
+  button {
+    border: 0;
+    color: #fff;
+  }
 }
 
 .auth {
   background-color: #537ad1;
   border-radius: 8px;
   color: white;
-  font-family: Helvetica;
-  font-size: bold;
-  font-weight: bold;
+  font-family: $authFontFam;
+  font-size: $authFontWeight;
+  font-weight: $authFontWeight;
   height: 60%;
   margin: 10% auto;
   opacity: 60%;
@@ -36,24 +45,24 @@ form button {
   width: 60%;
 }
 
-.auth > h1 {
+.auth>h1 {
   border: 4px solid white;
   border-radius: 8px;
 }
 
 #inputEmail {
   color: white;
-  font-size: 14px;
+  font-size: $authFontSize;
   height: 2em;
 }
 
 #password {
   color: white;
-  font-size: 14px;
+  font-size: $authFontSize;
   height: 2em;
 }
 
-.btn, .signin, .signup, .btn-close, .btn-reopen {
+.btn {
   background-color: white;
   border-radius: 8px;
   box-sizing: border-box;
@@ -64,10 +73,15 @@ form button {
 }
 
 .signin {
+  @extend .btn;
   margin-bottom: 8px;
 }
 
-div.btn:hover, div.signin:hover, div.signup:hover, div.btn-close:hover, div.btn-reopen:hover {
+.signup {
+  @extend .btn;
+}
+
+div.btn:hover {
   background-color: black;
   color: white;
   cursor: pointer;
@@ -83,11 +97,11 @@ div.btn:hover, div.signin:hover, div.signup:hover, div.btn-close:hover, div.btn-
 }
 
 .btn-close {
+  @extend .btn;
   background-color: #c0f0d0;
 }
 
 .btn-reopen {
+  @extend.btn;
   background-color: #faffc6;
 }
-
-/*# sourceMappingURL=styles.css.map */

@@ -1,17 +1,28 @@
-<div class="container-fluid">
-  <div class="col-md-9 login">
-    <div class="row-fluid">
-      <div id='signin' class="form-signin col-md-6 col-sm-12 col-xs-12">
-        <form name="signinForm" ng-submit='signin()' ng-controller="frontAuthCtrl">
-          <h2 class="form-signin-heading">Please Sign In</h2>
-          <label for="inputEmail" class="sr-only">Email</label>
-          <input type='text' id="inputEmail" class="form-control" placeholder="Email" ng-model='user.email' required autofocus>
-          <label for="password" class="sr-only">Password</label>
-          <input type="password" id="password" class="form-control" placeholder="Password" ng-model='user.password' required>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-          <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
-        </form>
+<div class="container">
+  <div class="auth">
+    <h1>Ada</h1>
+    <form name="signinForm" ng-submit='signin()' ng-controller="frontAuthCtrl">
+      <div class="auth-header auth-header-border">
+        <h2>Please Sign In</h2>
       </div>
-    </div>
+      <div class="email email-label">
+        <label for="inputEmail">Email</label>
+      </div>
+      <div class="email email-box">
+        <input type='text' id="inputEmail" placeholder="Email" ng-model='user.email' required autofocus>
+      </div>
+      <div class="password password-label">
+        <label for="password">Password</label>
+      </div>
+      <div class="password password-box">
+        <input type="password" id="password" placeholder="Password" ng-model='user.password' required>
+      </div>
+      <div class="btn signin" ng-click=signin()>
+        Sign in
+      </div>
+      <div class="btn signup" ng-click=signupRedirect()>
+        Signup
+      </div>
+    </form>
   </div>
 </div>
