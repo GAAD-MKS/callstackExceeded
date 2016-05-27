@@ -6,10 +6,11 @@ angular.module('adaApp')
     console.log('++line 6 inside signup in frontAuthFactory',user);
     return $http({
       method: 'POST',
-      url: '/signin',
+      url: 'api/auth/signin',
       data: user
     })
       .then(function (resp) {
+        console.log('++line 13 inside signin on return', resp.data);
         return resp.data;
       });
   };
@@ -18,7 +19,7 @@ angular.module('adaApp')
     console.log('++line 18 inside signup in frontAuthFactory',user);
     return $http({
       method: 'POST',
-      url: '/signup',
+      url: 'api/auth/signup',
       data: user
     })
       .then(function (resp) {

@@ -1,23 +1,37 @@
-<table>
+<table class="table table-hover">
   <thead>
+    <th>Image</th>
     <th>Location</th>
     <th>Violation</th>
     <th>Comment</th>
     <th>Created</th>
     <th>Updated</th>
     <th>Status</th>
+    <th>Action</th>
   </thead>
   <tbody>
-    <tr ng-repeat="item in listings.violations">
+    <tr class="item" ng-repeat="item in listings.violations">
+      <td><img src={{item.url}}
+                height="88"
+                width="88"/></td>
       <td>{{item.locationName}}</td>
       <td>{{item.violation}}</td>
       <td>{{item.comment}}</td>
       <td>{{item.createdAt}}</td>
       <td>{{item.updatedAt}}</td>
       <td>{{item.status}}</td>
-      <td><button ng-click=listings.closeListing(item) ng-show='item.status === "pending"'>Close</button></td>
+      <td>
+        <button ng-click=listings.closeListing(item)
+                ng-show='item.status === "open"'
+                class="btn-status btn-close">Close</button>
+        <button ng-click=listings.openListing(item)
+                ng-show='item.status === "closed"'
+                class="btn-status btn-reopen">Re-open</button>
+      </td>
     </tr>
   </tbody>
-
-
 </table>
+
+<ul class="navbar" ng-controller="frontAuthCtrl">
+  <li ng-click="signout()"><a href="#/signin">Logout</a></li>
+</ul>

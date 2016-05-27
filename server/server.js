@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var app = express();
 
 if(!process.env.USERNAME) {
-  var config = require('./config.js');
+  var config = require('../config.js');
 }
 
 var mongooseUsername = process.env.USERNAME || config.username;

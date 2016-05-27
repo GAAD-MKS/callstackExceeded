@@ -1,0 +1,111 @@
+$authFontFam: Helvetica;
+$authFontWeight: bold;
+$authFontSize: 14px;
+$authPosition: center;
+$authPadding: 20px;
+
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background-color: rgba(#212116, 0.24);
+}
+
+div {
+  padding: $authPadding;
+}
+
+form {
+  input {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    width: 200px;
+  }
+  button {
+    border: 0;
+    color: #fff;
+  }
+}
+
+.auth {
+  background-color: #537ad1;
+  border-radius: 8px;
+  color: white;
+  font-family: $authFontFam;
+  font-size: $authFontWeight;
+  font-weight: $authFontWeight;
+  height: 60%;
+  margin: 10% auto;
+  opacity: 60%;
+  text-align: center;
+  width: 60%;
+}
+
+.auth>h1 {
+  border: 4px solid white;
+  border-radius: 8px;
+}
+
+#inputEmail {
+  color: white;
+  font-size: $authFontSize;
+  height: 2em;
+}
+
+#inputName {
+  @extend #inputEmail;
+}
+
+#password {
+  color: white;
+  font-size: $authFontSize;
+  height: 2em;
+}
+
+.btn {
+  background-color: white;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: black;
+  height: 50px;
+  margin: 0 auto;
+  width: 250px;
+}
+
+.signin {
+  @extend .btn;
+  margin-bottom: 8px;
+}
+
+.signup {
+  @extend .signin
+}
+
+div.btn:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: #537ad1;
+  color: white;
+}
+
+.btn-status:hover {
+  cursor: pointer;
+}
+
+.btn-close {
+  @extend .btn;
+  background-color: #c0f0d0;
+}
+
+.btn-reopen {
+  @extend.btn;
+  background-color: #faffc6;
+}

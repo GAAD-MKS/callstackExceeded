@@ -1,0 +1,77 @@
+html {
+  overflow-y: scroll; }
+
+body {
+  background-color: rgba(33, 33, 22, 0.24); }
+
+div {
+  padding: 20px; }
+
+form input {
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  width: 200px; }
+form button {
+  border: 0;
+  color: #fff; }
+
+.auth {
+  background-color: #537ad1;
+  border-radius: 8px;
+  color: white;
+  font-family: Helvetica;
+  font-size: bold;
+  font-weight: bold;
+  height: 60%;
+  margin: 10% auto;
+  opacity: 60%;
+  text-align: center;
+  width: 60%; }
+
+.auth > h1 {
+  border: 4px solid white;
+  border-radius: 8px; }
+
+#inputEmail, #inputName {
+  color: white;
+  font-size: 14px;
+  height: 2em; }
+
+#password {
+  color: white;
+  font-size: 14px;
+  height: 2em; }
+
+.btn, .signin, .signup, .btn-close, .btn-reopen {
+  background-color: white;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: black;
+  height: 50px;
+  margin: 0 auto;
+  width: 250px; }
+
+.signin, .signup {
+  margin-bottom: 8px; }
+
+div.btn:hover, div.signin:hover, div.signup:hover, div.btn-close:hover, div.btn-reopen:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer; }
+
+.item:hover {
+  background-color: #537ad1;
+  color: white; }
+
+.btn-status:hover {
+  cursor: pointer; }
+
+.btn-close {
+  background-color: #c0f0d0; }
+
+.btn-reopen {
+  background-color: #faffc6; }
+
+/*# sourceMappingURL=styles.css.map */

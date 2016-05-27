@@ -17,13 +17,23 @@ function listingsFactory($http) {
       url: 'api/listings/closeListing',
       data: item
     }).then(function(res) {
-      console.log(res);
+      return res.data;
+    })
+  }
+
+  function openListing(item) {
+    return $http({
+      method: 'PUT',
+      url: 'api/listings/openListing',
+      data: item
+    }).then(function(res) {
       return res.data;
     })
   }
 
   return {
     fetchListings: fetchListings,
-    closeListing: closeListing
+    closeListing: closeListing,
+    openListing: openListing
   }
 }

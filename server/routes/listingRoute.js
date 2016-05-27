@@ -10,4 +10,7 @@ module.exports = function(app) {
 
   // close listing
   app.put('/closeListing', jsonParser, listingController.closeListing);
+
+  // open listing
+  app.put('/openListing', jsonParser, listingController.openListing);
 }

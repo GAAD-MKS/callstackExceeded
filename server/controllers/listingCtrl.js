@@ -4,7 +4,8 @@ exports.addListing = function(req, res) {
   var violation = new Violation ({
     locationName: req.body.locationName,
     violation: req.body.violation,
-    comment: req.body.comment
+    comment: req.body.comment,
+    url: req.body.url
   });
 
   function decodeBase64Image(dataString) {
@@ -45,9 +46,17 @@ exports.fetchListings = function(req, res) {
   });
 }
 
-
 exports.closeListing = function(req, res) {
   Violation.where({ _id: req.body._id }).update({ status: "closed" }, function(err) {
+    if (err) {
+      console.log(err);
+    }
+    res.end();
+  });
+}
+
+exports.openListing = function(req, res) {
+  Violation.where({ _id: req.body._id }).update({ status: "open" }, function(err) {
     if (err) {
       console.log(err);
     }
