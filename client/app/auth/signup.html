@@ -1,21 +1,40 @@
 <div class="container-fluid">
-  <div class="col-md-9 col-md-offset-3">
-    <div class="row-fluid">
-      <div id='signup' class="form-signin col-md-6 col-sm-12 col-xs-12">
-        <form name="signupForm" ng-submit='signup()' ng-controller="frontAuthCtrl">
-          <h2 class="form-signin-heading">Please Sign Up</h2>
-          <label for="inputEmail" class="sr-only">Email</label>
-          <input type='text' id="inputEmail" class="form-control" placeholder="Email" ng-model='user.email' required autofocus="">
-          <label for="password" class="sr-only">Password</label>
-          <input type="password" id="password" class="form-control" placeholder="Password" ng-model='user.password' required>
-          <label for="inputFirstName" class="sr-only">First Name</label>
-          <input type="text" id="inputName" class="form-control" placeholder="First Name" ng-model='user.firstName' required>
-          <label for="inputLastName" class="sr-only">Last Name</label>
-          <input type="text" id="inputName" class="form-control" placeholder="Last Name" ng-model='user.lastName' required>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
-          <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>
-        </form>
+  <div class="auth">
+    <h1>Ada</h1>
+    <form class="signupForm" name="signupForm" ng-submit='signup()' ng-controller="frontAuthCtrl">
+      <div class="auth-header auth-header-border">
+        <h2 class="form-signin-heading">Please Sign Up</h2>
       </div>
-    </div>
+      <div>
+        <label for="inputEmail" class="sr-only">Email</label>
+      </div>
+      <div>
+        <input type='text' id="inputEmail" class="form-control" placeholder="Email" ng-model='user.email' required autofocus="">
+      </div>
+      <div>
+        <label for="password" class="sr-only">Password</label>
+      </div>
+      <div>
+        <input type="password" id="password" class="form-control" placeholder="Password" ng-model='user.password' required>
+      </div>
+      <div>
+        <label for="inputFirstName" class="sr-only">First Name</label>
+      </div>
+      <div>
+        <input type="text" id="inputName" class="form-control" placeholder="First Name" ng-model='user.firstName' required>
+      </div>
+      <div>
+        <label for="inputLastName" class="sr-only">Last Name</label>
+      </div>
+      <div>
+        <input type="text" id="inputName" class="form-control" placeholder="Last Name" ng-model='user.lastName' required>
+      </div>
+      <div class="btn signup" ng-click="signup()">
+        Signup
+      </div>
+      <div class="btn signin" ng-click="signinRedirect()">
+        Sign in
+      </div>
+    </form>
   </div>
 </div>

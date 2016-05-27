@@ -56,6 +56,10 @@ form {
   height: 2em;
 }
 
+#inputName {
+  @extend #inputEmail;
+}
+
 #password {
   color: white;
   font-size: $authFontSize;
@@ -78,7 +82,7 @@ form {
 }
 
 .signup {
-  @extend .btn;
+  @extend .signin
 }
 
 div.btn:hover {

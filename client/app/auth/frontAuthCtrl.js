@@ -21,6 +21,10 @@ angular.module('adaApp')
     });
   };
 
+  $scope.signinRedirect = function() {
+    $state.go("signin");
+  }
+
   $scope.signup = function() {
     console.log('++line 25 inside signup in frontAuthCtrl');
     frontAuthFactory.signup($scope.user)
